@@ -5,11 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Programs & Events | NEVERSAID</title>
   <meta name="description" content="NEVERSAID program series and community events, including the six-week series with Arthouse Halton." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#0b0b0f" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NEVERSAID" />
+  <meta property="og:title" content="Programs & Events | NEVERSAID" />
+  <meta property="og:description" content="NEVERSAID program series and community events, including the six-week series with Arthouse Halton." />
+  <meta property="og:image" content="/images/share.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/tailwind.css" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body class="bg-ink font-sans text-zinc-200 antialiased">
@@ -25,21 +32,34 @@
       </div>
     </section>
     <section>
+      <div class="mx-auto max-w-6xl px-5 pt-20 sm:px-8">
+        <div class="reveal flex flex-col gap-6 rounded-2xl border border-gold/30 bg-gold/[0.06] p-7 sm:flex-row sm:items-center sm:justify-between sm:p-9">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">Coming up</p>
+            <h2 class="mt-2 font-display text-2xl text-white sm:text-3xl">Our next program series is in the works.</h2>
+            <p class="mt-2 max-w-prose text-zinc-300">Follow us on Instagram to hear first when sign-ups open.</p>
+          </div>
+          <a href="https://www.instagram.com/neversaidorg" target="_blank" rel="noopener" class="shrink-0 rounded-full bg-gold px-7 py-3 text-center font-semibold text-ink hover:bg-gold-light">Follow @neversaidorg</a>
+        </div>
+      </div>
+    </section>
+    <section>
       <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8">
+        <h2 class="reveal sr-only">Past programs and events</h2>
         <div class="grid gap-8 md:grid-cols-2">
-          <article class="reveal flex flex-col overflow-hidden rounded-2xl bg-panel ring-1 ring-white/10">
-            <img src="https://bc-user-uploads.brandcrowd.com/public/media-Production/6628cfa4-c9c3-4071-8bda-2e3ce66880e7/50cf634b-1e06-40c8-ae3d-6d8c46e59ab4_2x" alt="Youth writing at Arthouse Halton" class="aspect-[16/10] w-full object-cover" loading="lazy" />
+          <article class="reveal zoom-card flex flex-col overflow-hidden rounded-2xl bg-panel ring-1 ring-white/10">
+            <img src="images/50cf634b.jpg" alt="Youth writing at Arthouse Halton" class="aspect-[16/10] w-full object-cover" loading="lazy" data-lightbox />
             <div class="flex flex-1 flex-col p-7">
               <span class="w-fit rounded-full bg-gold/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-gold">Program series · 6 weeks</span>
-              <h2 class="mt-4 font-display text-2xl text-white">NEVERSAID × Arthouse Halton</h2>
+              <h3 class="mt-4 font-display text-2xl text-white">NEVERSAID × Arthouse Halton</h3>
               <p class="mt-3 max-w-prose leading-relaxed text-zinc-300">A six-week program of creative writing coaching sessions with the youth at Arthouse Halton. Authors from a range of genres were invited to share their advice with aspiring young writers.</p>
             </div>
           </article>
-          <article class="reveal flex flex-col overflow-hidden rounded-2xl bg-panel ring-1 ring-white/10">
-            <img src="https://bc-user-uploads.brandcrowd.com/public/media-Production/6628cfa4-c9c3-4071-8bda-2e3ce66880e7/17d7433f-30fb-4319-b68a-2b12fe04fd51_2x" alt="Literary salon at the Salvation Army" class="aspect-[16/10] w-full object-cover" loading="lazy" />
+          <article class="reveal zoom-card flex flex-col overflow-hidden rounded-2xl bg-panel ring-1 ring-white/10">
+            <img src="images/17d7433f.jpg" alt="Literary salon at the Salvation Army" class="aspect-[16/10] w-full object-cover" loading="lazy" data-lightbox />
             <div class="flex flex-1 flex-col p-7">
               <span class="w-fit rounded-full bg-gold/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-gold">Community event</span>
-              <h2 class="mt-4 font-display text-2xl text-white">NEVERSAID @ Salvation Army Literary Salon</h2>
+              <h3 class="mt-4 font-display text-2xl text-white">NEVERSAID @ Salvation Army Literary Salon</h3>
               <p class="mt-3 max-w-prose leading-relaxed text-zinc-300">A literary discussion at a Salvation Army emergency shelter, featuring best-selling author and journalist Shelly Sanders (HarperCollins) and local dark fantasy author Hannah Manders.</p>
             </div>
           </article>
@@ -50,13 +70,13 @@
       <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8">
         <h2 class="reveal font-display text-3xl text-white sm:text-4xl">From the Arthouse Halton series</h2>
         <div class="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-          <img src="https://bc-user-uploads.brandcrowd.com/public/media-Production/6628cfa4-c9c3-4071-8bda-2e3ce66880e7/93d888f4-4dfb-486d-87cb-33e29ab94f22_2x" alt="Moments from the NEVERSAID × Arthouse Halton series" class="reveal aspect-square w-full rounded-xl object-cover ring-1 ring-white/10" loading="lazy" />
-          <img src="https://bc-user-uploads.brandcrowd.com/public/media-Production/6628cfa4-c9c3-4071-8bda-2e3ce66880e7/f84fc318-1a34-4245-ab85-f178a72762f4_2x" alt="Moments from the NEVERSAID × Arthouse Halton series" class="reveal aspect-square w-full rounded-xl object-cover ring-1 ring-white/10" loading="lazy" />
-          <img src="https://bc-user-uploads.brandcrowd.com/public/media-Production/6628cfa4-c9c3-4071-8bda-2e3ce66880e7/53488afc-8011-4fee-a71a-4d0faf3c2674_2x" alt="Moments from the NEVERSAID × Arthouse Halton series" class="reveal aspect-square w-full rounded-xl object-cover ring-1 ring-white/10" loading="lazy" />
-          <img src="https://bc-user-uploads.brandcrowd.com/public/media-Production/6628cfa4-c9c3-4071-8bda-2e3ce66880e7/45ca593e-f752-4e74-8061-fabbf0819220_2x" alt="Moments from the NEVERSAID × Arthouse Halton series" class="reveal aspect-square w-full rounded-xl object-cover ring-1 ring-white/10" loading="lazy" />
-          <img src="https://bc-user-uploads.brandcrowd.com/public/media-Production/6628cfa4-c9c3-4071-8bda-2e3ce66880e7/78fe841e-1889-4091-894c-babc459ed5c6_2x" alt="Moments from the NEVERSAID × Arthouse Halton series" class="reveal aspect-square w-full rounded-xl object-cover ring-1 ring-white/10" loading="lazy" />
-          <img src="https://bc-user-uploads.brandcrowd.com/public/media-Production/6628cfa4-c9c3-4071-8bda-2e3ce66880e7/660af493-91bd-4972-a762-85202cbda9cd_2x" alt="Moments from the NEVERSAID × Arthouse Halton series" class="reveal aspect-square w-full rounded-xl object-cover ring-1 ring-white/10" loading="lazy" />
-          <img src="https://bc-user-uploads.brandcrowd.com/public/media-Production/6628cfa4-c9c3-4071-8bda-2e3ce66880e7/85f91930-8dca-44c3-b75b-49f1f0155660_2x" alt="Moments from the NEVERSAID × Arthouse Halton series" class="reveal aspect-square w-full rounded-xl object-cover ring-1 ring-white/10" loading="lazy" />
+          <img src="images/93d888f4.jpg" alt="Moments from the NEVERSAID × Arthouse Halton series" class="reveal aspect-square w-full rounded-xl object-cover ring-1 ring-white/10 transition-opacity hover:opacity-85" loading="lazy" data-lightbox />
+          <img src="images/f84fc318.jpg" alt="Moments from the NEVERSAID × Arthouse Halton series" class="reveal aspect-square w-full rounded-xl object-cover ring-1 ring-white/10 transition-opacity hover:opacity-85" loading="lazy" data-lightbox />
+          <img src="images/53488afc.jpg" alt="Moments from the NEVERSAID × Arthouse Halton series" class="reveal aspect-square w-full rounded-xl object-cover ring-1 ring-white/10 transition-opacity hover:opacity-85" loading="lazy" data-lightbox />
+          <img src="images/45ca593e.jpg" alt="Moments from the NEVERSAID × Arthouse Halton series" class="reveal aspect-square w-full rounded-xl object-cover ring-1 ring-white/10 transition-opacity hover:opacity-85" loading="lazy" data-lightbox />
+          <img src="images/78fe841e.jpg" alt="Moments from the NEVERSAID × Arthouse Halton series" class="reveal aspect-square w-full rounded-xl object-cover ring-1 ring-white/10 transition-opacity hover:opacity-85" loading="lazy" data-lightbox />
+          <img src="images/660af493.jpg" alt="Moments from the NEVERSAID × Arthouse Halton series" class="reveal aspect-square w-full rounded-xl object-cover ring-1 ring-white/10 transition-opacity hover:opacity-85" loading="lazy" data-lightbox />
+          <img src="images/85f91930.jpg" alt="Moments from the NEVERSAID × Arthouse Halton series" class="reveal aspect-square w-full rounded-xl object-cover ring-1 ring-white/10 transition-opacity hover:opacity-85" loading="lazy" data-lightbox />
         </div>
       </div>
     </section>

@@ -110,6 +110,116 @@ function revealOnScroll() {
   els.forEach((el) => io.observe(el));
 }
 
+// Numbers with data-count tick up from 0 the first time they scroll into view.
+function countUp() {
+  const els = document.querySelectorAll("[data-count]");
+  if (!els.length || matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
+  const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+    if (!e.isIntersecting) return;
+    io.unobserve(e.target);
+    const el = e.target, end = +el.dataset.count, start = performance.now();
+    const tick = (now) => {
+      const t = Math.min((now - start) / 1200, 1);
+      el.textContent = Math.round(end * (1 - Math.pow(1 - t, 3)));
+      if (t < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }), { threshold: 0.6 });
+  els.forEach((el) => { el.textContent = "0"; io.observe(el); });
+}
+
+// Join form. Paste the Formspree form ID into data-formspree on the <form> (index.html).
+// Until then the form says it's a preview instead of pretending to send.
+function joinForm() {
+  const form = document.getElementById("join-form");
+  if (!form) return;
+  const msg = document.getElementById("join-msg");
+  const say = (text, ok) => {
+    msg.textContent = text;
+    msg.className = "mt-4 " + (ok ? "text-gold" : "text-red-300");
+  };
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const id = form.dataset.formspree;
+    if (!id) return say("Thanks! This is a preview, so the form isn't sending yet.", true), form.reset();
+    const btn = form.querySelector("button");
+    btn.disabled = true; btn.textContent = "Sending…";
+    try {
+      const res = await fetch(`https://formspree.io/f/${id}`, {
+        method: "POST", body: new FormData(form), headers: { Accept: "application/json" },
+      });
+      if (!res.ok) throw new Error();
+      form.reset();
+      say("Thank you! We got your message and will be in touch soon.", true);
+    } catch {
+      say("Sorry, that didn't send. Please try again, or message us on Instagram.", false);
+    } finally {
+      btn.disabled = false; btn.textContent = "Submit";
+    }
+  });
+}
+
+// Click any image with data-lightbox to see it full-screen. Arrow keys / swipe to move, Esc to close.
+function lightbox() {
+  const imgs = [...document.querySelectorAll("img[data-lightbox]")];
+  if (!imgs.length) return;
+  const box = document.createElement("div");
+  box.className = "lightbox";
+  box.setAttribute("role", "dialog");
+  box.setAttribute("aria-modal", "true");
+  box.setAttribute("aria-label", "Photo viewer");
+  box.innerHTML = `
+    <button class="lb-btn lb-close" aria-label="Close">✕</button>
+    <button class="lb-btn lb-prev" aria-label="Previous photo">‹</button>
+    <img alt="" />
+    <button class="lb-btn lb-next" aria-label="Next photo">›</button>
+    <p class="lb-count"></p>`;
+  document.body.appendChild(box);
+  const big = box.querySelector("img"), count = box.querySelector(".lb-count");
+  let i = 0, lastFocus = null, touchX = null;
+
+  const show = (n) => {
+    i = (n + imgs.length) % imgs.length;
+    big.src = imgs[i].src; big.alt = imgs[i].alt;
+    count.textContent = `${i + 1} / ${imgs.length}`;
+  };
+  const open = (n) => {
+    lastFocus = document.activeElement;
+    show(n); box.classList.add("open"); document.body.classList.add("overflow-hidden");
+    box.querySelector(".lb-close").focus();
+  };
+  const close = () => {
+    box.classList.remove("open"); document.body.classList.remove("overflow-hidden");
+    lastFocus && lastFocus.focus();
+  };
+
+  imgs.forEach((img, n) => {
+    img.tabIndex = 0;
+    img.setAttribute("role", "button");
+    img.classList.add("cursor-zoom-in");
+    img.addEventListener("click", () => open(n));
+    img.addEventListener("keydown", (e) => (e.key === "Enter" || e.key === " ") && (e.preventDefault(), open(n)));
+  });
+  box.querySelector(".lb-close").onclick = close;
+  box.querySelector(".lb-prev").onclick = () => show(i - 1);
+  box.querySelector(".lb-next").onclick = () => show(i + 1);
+  box.addEventListener("click", (e) => e.target === box && close());
+  box.addEventListener("touchstart", (e) => (touchX = e.touches[0].clientX), { passive: true });
+  box.addEventListener("touchend", (e) => {
+    const dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 50) show(i + (dx < 0 ? 1 : -1));
+  });
+  document.addEventListener("keydown", (e) => {
+    if (!box.classList.contains("open")) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowRight") show(i + 1);
+    if (e.key === "ArrowLeft") show(i - 1);
+  });
+}
+
 renderHeader();
 renderFooter();
 revealOnScroll();
+countUp();
+joinForm();
+lightbox();

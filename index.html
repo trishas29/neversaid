@@ -5,11 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>NEVERSAID | Pen, you're forever.</title>
   <meta name="description" content="The Neversaid Society is a student-led non-profit in Oakville, Ontario, making creative writing accessible to every young writer." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#0b0b0f" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NEVERSAID" />
+  <meta property="og:title" content="NEVERSAID | Pen, you're forever." />
+  <meta property="og:description" content="The Neversaid Society is a student-led non-profit in Oakville, Ontario, making creative writing accessible to every young writer." />
+  <meta property="og:image" content="/images/share.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/tailwind.css" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body class="bg-ink font-sans text-zinc-200 antialiased">
@@ -22,7 +29,7 @@
       <div class="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 sm:px-8 md:py-28 lg:grid-cols-2">
         <div>
           <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">The Neversaid Society</p>
-          <h1 class="mt-5 font-display text-5xl leading-[1.05] text-white sm:text-6xl lg:text-7xl">Pen, you're <em class="text-gold">forever.</em></h1>
+          <h1 class="mt-5 font-display text-5xl leading-[1.05] text-white sm:text-6xl lg:text-7xl">Pen, you're <span class="pen-word"><em class="text-gold">forever.</em><svg class="pen-stroke" viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 16 C 60 6, 120 22, 180 12 S 270 8, 296 14" /></svg></span></h1>
           <p class="mt-6 max-w-xl text-lg leading-relaxed text-zinc-300">
             A student-led non-profit in Oakville, Ontario, making creative writing accessible to everyone and building a community of young writers who don't have to conform.
           </p>
@@ -32,7 +39,7 @@
           </div>
         </div>
         <div class="relative">
-          <img src="https://bc-user-uploads.brandcrowd.com/public/media-Production/6628cfa4-c9c3-4071-8bda-2e3ce66880e7/50cf634b-1e06-40c8-ae3d-6d8c46e59ab4_2x"
+          <img src="images/50cf634b.jpg"
                alt="Young writers at a NEVERSAID session at Arthouse Halton"
                class="aspect-[4/3] w-full rounded-3xl object-cover shadow-2xl ring-1 ring-white/10" />
           <div class="absolute -bottom-6 -left-4 hidden rounded-2xl bg-panel px-6 py-4 shadow-xl ring-1 ring-white/10 sm:block">
@@ -41,6 +48,17 @@
           </div>
         </div>
       </div>
+    </section>
+
+
+    <!-- Quick numbers (all true as of Oct 2026; update as programs grow) -->
+    <section class="border-t border-white/10">
+      <dl class="mx-auto grid max-w-6xl grid-cols-2 gap-y-10 px-5 py-14 sm:px-8 md:grid-cols-4">
+        <div class="reveal text-center"><dt class="sr-only">Partner authors</dt><dd><span class="font-display text-5xl text-gold" data-count="6">6</span><p class="mt-2 text-zinc-300">partner authors</p></dd></div>
+        <div class="reveal text-center"><dt class="sr-only">Programs and events</dt><dd><span class="font-display text-5xl text-gold" data-count="2">2</span><p class="mt-2 text-zinc-300">programs & events so far</p></dd></div>
+        <div class="reveal text-center"><dt class="sr-only">Weeks of coaching</dt><dd><span class="font-display text-5xl text-gold" data-count="6">6</span><p class="mt-2 text-zinc-300">weeks of coaching at Arthouse Halton</p></dd></div>
+        <div class="reveal text-center"><dt class="sr-only">Cost</dt><dd><span class="font-display text-5xl text-gold">$0</span><p class="mt-2 text-zinc-300">to take part, always</p></dd></div>
+      </dl>
     </section>
 
     <!-- What we do -->
@@ -73,7 +91,7 @@
     <!-- Featured program -->
     <section>
       <div class="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-2">
-        <img src="https://bc-user-uploads.brandcrowd.com/public/media-Production/6628cfa4-c9c3-4071-8bda-2e3ce66880e7/c6c6dc61-7c2c-4b37-9bdb-69f65caef372_2x"
+        <img src="images/c6c6dc61.jpg"
              alt="An author leading a writing workshop with youth"
              class="reveal aspect-[4/3] w-full rounded-3xl object-cover ring-1 ring-white/10" loading="lazy" />
         <div class="reveal">
@@ -96,7 +114,7 @@
           <h2 class="font-display text-3xl text-white sm:text-4xl">Join the Neversaid Society</h2>
           <p class="mt-4 text-lg leading-relaxed text-zinc-300">We're looking for partner authors, guest speakers, and program volunteers. Tell us a little about yourself.</p>
         </div>
-        <form id="join-form" class="reveal grid gap-5 rounded-2xl bg-ink p-6 ring-1 ring-white/10 sm:grid-cols-2 sm:p-8 lg:col-span-3">
+        <form id="join-form" data-formspree="" class="reveal grid gap-5 rounded-2xl bg-ink p-6 ring-1 ring-white/10 sm:grid-cols-2 sm:p-8 lg:col-span-3">
           <label class="block">
             <span class="text-sm font-medium text-zinc-200">First name *</span>
             <input required name="first" class="mt-2 w-full rounded-lg border border-white/15 bg-panel px-4 py-3 text-white placeholder-zinc-500" />
@@ -121,9 +139,11 @@
             <span class="text-sm font-medium text-zinc-200">Tell us about your writing experience *</span>
             <textarea required name="experience" rows="4" class="mt-2 w-full rounded-lg border border-white/15 bg-panel px-4 py-3 text-white"></textarea>
           </label>
+          <!-- Spam trap: real people never see or fill this -->
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
           <div class="sm:col-span-2">
             <button class="w-full rounded-full bg-gold px-7 py-3 font-semibold text-ink transition-colors hover:bg-gold-light sm:w-auto">Submit</button>
-            <p id="join-msg" class="mt-4 hidden text-gold" role="status"></p>
+            <p id="join-msg" class="mt-4 hidden" role="status"></p>
           </div>
         </form>
       </div>
@@ -132,15 +152,5 @@
 
   <div id="site-footer"></div>
   <script src="js/main.js"></script>
-  <script>
-    // Preview only: the form isn't connected to an inbox yet (hook up Formspree or similar before launch).
-    document.getElementById("join-form").addEventListener("submit", (e) => {
-      e.preventDefault();
-      const msg = document.getElementById("join-msg");
-      msg.textContent = "Thanks! This is a preview, so the form isn't sending yet.";
-      msg.classList.remove("hidden");
-      e.target.reset();
-    });
-  </script>
 </body>
 </html>
