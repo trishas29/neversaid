@@ -35,7 +35,10 @@ function renderHeader() {
   document.getElementById("site-header").innerHTML = `
     <header class="sticky top-0 z-50 border-b border-white/10 bg-ink/85 backdrop-blur-md">
       <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8" aria-label="Main">
-        <a href="index.html" class="font-display text-2xl tracking-wide text-white">NEVER<span class="text-gold">SAID</span></a>
+        <a href="index.html" class="flex items-center gap-3 font-display text-2xl tracking-wide text-white">
+          <img src="images/logo-sm.png" alt="" width="40" height="40" class="h-10 w-10" />
+          <span>NEVER<span class="text-gold">SAID</span></span>
+        </a>
         <div class="hidden items-center gap-1 lg:flex">
           ${NAV.map((i) => link(i, false)).join("")}
           <a href="index.html#join" class="ml-3 rounded-full bg-gold px-5 py-2 text-[15px] font-semibold text-ink hover:bg-gold-light transition-colors">Join us</a>
@@ -75,7 +78,10 @@ function renderFooter() {
     <footer class="border-t border-white/10 bg-ink">
       <div class="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-3">
         <div>
-          <p class="font-display text-2xl text-white">NEVER<span class="text-gold">SAID</span></p>
+          <div class="flex items-center gap-3">
+            <img src="images/logo-sm.png" alt="" width="48" height="48" class="h-12 w-12" />
+            <p class="font-display text-2xl text-white">NEVER<span class="text-gold">SAID</span></p>
+          </div>
           <p class="mt-3 max-w-xs text-zinc-300">The Neversaid Society. Pen, you're forever.</p>
           <p class="mt-1 text-sm text-zinc-400">A student-led non-profit in Oakville, Ontario.</p>
         </div>

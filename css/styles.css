@@ -11,14 +11,14 @@ body { -webkit-font-smoothing: antialiased; }
 
 /* Keyboard focus ring that shows on the dark background */
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
-  outline: 2px solid #f2c45a; outline-offset: 3px; border-radius: 6px;
+  outline: 2px solid #fcbc5c; outline-offset: 3px; border-radius: 6px;
 }
 
 /* Hand-drawn gold underline under "forever." on the home page */
 .pen-word { position: relative; display: inline-block; white-space: nowrap; }
 .pen-stroke { position: absolute; left: 0; bottom: -0.12em; width: 100%; height: 0.32em; overflow: visible; }
 .pen-stroke path {
-  fill: none; stroke: #f2c45a; stroke-width: 4; stroke-linecap: round;
+  fill: none; stroke: #fcbc5c; stroke-width: 4; stroke-linecap: round;
   stroke-dasharray: 320; stroke-dashoffset: 320;
   animation: pen-draw 1.1s .5s cubic-bezier(.6,.1,.3,1) forwards;
 }

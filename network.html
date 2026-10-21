@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Our Network | NEVERSAID</title>
   <meta name="description" content="The partner authors and sponsors who make NEVERSAID programs possible." />
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="images/favicon-16.png" sizes="16x16" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <meta name="theme-color" content="#0b0b0f" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="NEVERSAID" />
@@ -24,7 +26,7 @@
 
   <main>
     <section class="relative overflow-hidden border-b border-white/10">
-      <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(242,196,90,0.14),transparent_55%)]"></div>
+      <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(252,188,92,0.14),transparent_55%)]"></div>
       <div class="relative mx-auto max-w-6xl px-5 py-16 sm:px-8 md:py-24">
         <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">Our network</p>
         <h1 class="mt-4 max-w-3xl font-display text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">Authors and partners who show up for young writers.</h1>
@@ -46,7 +48,7 @@
             <img src="images/dfad7e16.jpg" alt="Portrait of Jennifer Maruno" class="h-24 w-24 shrink-0 rounded-full object-cover ring-2 ring-gold/40" loading="lazy" />
             <div>
               <h3 class="text-lg font-semibold text-white">Jennifer Maruno</h3>
-              <p class="mt-2 leading-relaxed text-zinc-300">Author of eight novels and nine picture books for young readers, recognised on Bank Street's 2023 Best Children's Books list and with 2025 Stepping Stones and Horace Mann honours.</p>
+              <p class="mt-2 leading-relaxed text-zinc-300">Author of eight novels and nine picture books for young readers, all of which have received starred reviews and recognition. <em>While You Sleep</em> (Pajama Press) was named one of the Bank Street College of Education Best Children's Books of 2023. <em>Momma's Going to March</em> (Groundwood Books) won the 2025 Horace Manning Upstander Award and a 2025 Stepping Stones Honor Award. <em>The Go-Between</em> (Red Deer Press) also earned a 2025 Stepping Stones Honor Award, was nominated for the USIBBY international novel award, and was shortlisted for the Geoffrey Bilson Historical Fiction Award and the Hamilton Arts Award.</p>
             </div>
           </article>
           <article class="reveal flex gap-5 rounded-2xl bg-panel p-6 ring-1 ring-white/10">
@@ -84,24 +86,41 @@
       <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8">
         <h2 class="reveal font-display text-3xl sm:text-4xl">Partners & sponsors</h2>
         <p class="reveal mt-3 max-w-prose text-zinc-700">Thank you to the organizations that host our programs and keep them free.</p>
+        <!--
+          TO ADD A SPONSOR: put a logo with a see-through background in images/sponsors/ (PNG, about 800px wide),
+          then copy one <li>…</li> block below, paste it at the end of the list, and change the
+          link (href), the file name (src) and the name (alt + aria-label).
+        -->
         <ul class="mt-12 grid grid-cols-2 gap-x-8 gap-y-6 md:grid-cols-3" role="list">
-          <li class="reveal flex h-28 items-center justify-center sm:h-36">
-            <img src="images/sponsors/arthouse.png" alt="Arthouse Halton" class="max-h-20 max-w-[85%] object-contain sm:max-h-24" loading="lazy" />
+          <li class="reveal">
+            <a href="https://arthousehalton.com/" target="_blank" rel="noopener" class="flex h-28 items-center justify-center rounded-2xl transition hover:bg-ink/5 sm:h-36" aria-label="Arthouse Halton (opens in a new tab)">
+              <img src="images/sponsors/arthouse.png" alt="Arthouse Halton" class="max-h-20 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105 sm:max-h-24" loading="lazy" />
+            </a>
           </li>
-          <li class="reveal flex h-28 items-center justify-center sm:h-36">
-            <img src="images/sponsors/lorvale.png" alt="Lorvale Academy" class="max-h-20 max-w-[85%] object-contain sm:max-h-24" loading="lazy" />
+          <li class="reveal">
+            <a href="https://www.lorvale.ca/" target="_blank" rel="noopener" class="flex h-28 items-center justify-center rounded-2xl transition hover:bg-ink/5 sm:h-36" aria-label="Lorvale Academy (opens in a new tab)">
+              <img src="images/sponsors/lorvale.png" alt="Lorvale Academy" class="max-h-20 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105 sm:max-h-24" loading="lazy" />
+            </a>
           </li>
-          <li class="reveal flex h-28 items-center justify-center sm:h-36">
-            <img src="images/sponsors/rom.png" alt="Royal Ontario Museum (ROM)" class="max-h-20 max-w-[85%] object-contain sm:max-h-24" loading="lazy" />
+          <li class="reveal">
+            <a href="https://www.rom.on.ca/" target="_blank" rel="noopener" class="flex h-28 items-center justify-center rounded-2xl transition hover:bg-ink/5 sm:h-36" aria-label="Royal Ontario Museum (ROM) (opens in a new tab)">
+              <img src="images/sponsors/rom.png" alt="Royal Ontario Museum (ROM)" class="max-h-20 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105 sm:max-h-24" loading="lazy" />
+            </a>
           </li>
-          <li class="reveal flex h-28 items-center justify-center sm:h-36">
-            <img src="images/sponsors/aga-khan.png" alt="Aga Khan Museum" class="max-h-20 max-w-[85%] object-contain sm:max-h-24" loading="lazy" />
+          <li class="reveal">
+            <a href="https://agakhanmuseum.org/" target="_blank" rel="noopener" class="flex h-28 items-center justify-center rounded-2xl transition hover:bg-ink/5 sm:h-36" aria-label="Aga Khan Museum (opens in a new tab)">
+              <img src="images/sponsors/aga-khan.png" alt="Aga Khan Museum" class="max-h-20 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105 sm:max-h-24" loading="lazy" />
+            </a>
           </li>
-          <li class="reveal flex h-28 items-center justify-center sm:h-36">
-            <img src="images/sponsors/salvation-army.png" alt="The Salvation Army" class="max-h-20 max-w-[85%] object-contain sm:max-h-24" loading="lazy" />
+          <li class="reveal">
+            <a href="https://salvationarmy.ca/" target="_blank" rel="noopener" class="flex h-28 items-center justify-center rounded-2xl transition hover:bg-ink/5 sm:h-36" aria-label="The Salvation Army (opens in a new tab)">
+              <img src="images/sponsors/salvation-army.png" alt="The Salvation Army" class="max-h-20 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105 sm:max-h-24" loading="lazy" />
+            </a>
           </li>
-          <li class="reveal flex h-28 items-center justify-center sm:h-36">
-            <img src="images/sponsors/hobby-pros.png" alt="Hobby Pros Depot and A&amp;J Hobbies" class="max-h-20 max-w-[85%] object-contain sm:max-h-24" loading="lazy" />
+          <li class="reveal">
+            <a href="https://www.hobbyprosdepot.com/" target="_blank" rel="noopener" class="flex h-28 items-center justify-center rounded-2xl transition hover:bg-ink/5 sm:h-36" aria-label="Hobby Pros Depot and A&amp;J Hobbies (opens in a new tab)">
+              <img src="images/sponsors/hobby-pros.png" alt="Hobby Pros Depot and A&amp;J Hobbies" class="max-h-20 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105 sm:max-h-24" loading="lazy" />
+            </a>
           </li>
         </ul>
       </div>
